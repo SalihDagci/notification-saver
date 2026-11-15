@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000012B00000100000001 /* NotificationSaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000012B00000100000001 /* NotificationSaverApp.swift */; };
+		A10000022B00000100000001 /* SavedNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000022B00000100000001 /* SavedNotification.swift */; };
+		A10000032B00000100000001 /* NotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000032B00000100000001 /* NotificationStore.swift */; };
+		A10000042B00000100000001 /* SaveNotificationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000042B00000100000001 /* SaveNotificationIntent.swift */; };
+		A10000052B00000100000001 /* DateFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000052B00000100000001 /* DateFormatting.swift */; };
+		A10000062B00000100000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000062B00000100000001 /* ContentView.swift */; };
+		A10000072B00000100000001 /* NotificationFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000072B00000100000001 /* NotificationFeedView.swift */; };
+		A10000082B00000100000001 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000082B00000100000001 /* FavoritesView.swift */; };
+		A10000092B00000100000001 /* CalendarArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000092B00000100000001 /* CalendarArchiveView.swift */; };
+		A100000A2B00000100000001 /* NotificationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000A2B00000100000001 /* NotificationRowView.swift */; };
+		A100000B2B00000100000001 /* NotificationDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000B2B00000100000001 /* NotificationDetailSheet.swift */; };
+		A100000C2B00000100000001 /* AddNotificationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000C2B00000100000001 /* AddNotificationSheet.swift */; };
+		A100000D2B00000100000001 /* SetupGuideAndSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200000D2B00000100000001 /* SetupGuideAndSettingsView.swift */; };
+		A100000E2B00000100000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A200000E2B00000100000001 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000002B00000100000001 /* NotificationSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000012B00000100000001 /* NotificationSaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSaverApp.swift; sourceTree = "<group>"; };
+		A20000022B00000100000001 /* SavedNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNotification.swift; sourceTree = "<group>"; };
+		A20000032B00000100000001 /* NotificationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStore.swift; sourceTree = "<group>"; };
+		A20000042B00000100000001 /* SaveNotificationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNotificationIntent.swift; sourceTree = "<group>"; };
+		A20000052B00000100000001 /* DateFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatting.swift; sourceTree = "<group>"; };
+		A20000062B00000100000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000072B00000100000001 /* NotificationFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFeedView.swift; sourceTree = "<group>"; };
+		A20000082B00000100000001 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		A20000092B00000100000001 /* CalendarArchiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarArchiveView.swift; sourceTree = "<group>"; };
+		A200000A2B00000100000001 /* NotificationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRowView.swift; sourceTree = "<group>"; };
+		A200000B2B00000100000001 /* NotificationDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailSheet.swift; sourceTree = "<group>"; };
+		A200000C2B00000100000001 /* AddNotificationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotificationSheet.swift; sourceTree = "<group>"; };
+		A200000D2B00000100000001 /* SetupGuideAndSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGuideAndSettingsView.swift; sourceTree = "<group>"; };
+		A200000E2B00000100000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A200000F2B00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000012B00000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000012B00000100000001 = {
+			isa = PBXGroup;
+			children = (
+				A40000022B00000100000001 /* NotificationSaver */,
+				A40000032B00000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A40000022B00000100000001 /* NotificationSaver */ = {
+			isa = PBXGroup;
+			children = (
+				A20000012B00000100000001 /* NotificationSaverApp.swift */,
+				A40000042B00000100000001 /* Models */,
+				A40000052B00000100000001 /* Services */,
+				A40000062B00000100000001 /* Intents */,
+				A40000072B00000100000001 /* Utilities */,
+				A40000082B00000100000001 /* Views */,
+				A200000E2B00000100000001 /* Assets.xcassets */,
+				A200000F2B00000100000001 /* Info.plist */,
+			);
+			path = NotificationSaver;
+			sourceTree = "<group>";
+		};
+		A40000032B00000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A20000002B00000100000001 /* NotificationSaver.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40000042B00000100000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A20000022B00000100000001 /* SavedNotification.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A40000052B00000100000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A20000032B00000100000001 /* NotificationStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A40000062B00000100000001 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				A20000042B00000100000001 /* SaveNotificationIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		A40000072B00000100000001 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A20000052B00000100000001 /* DateFormatting.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A40000082B00000100000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A20000062B00000100000001 /* ContentView.swift */,
+				A20000072B00000100000001 /* NotificationFeedView.swift */,
+				A20000082B00000100000001 /* FavoritesView.swift */,
+				A20000092B00000100000001 /* CalendarArchiveView.swift */,
+				A200000A2B00000100000001 /* NotificationRowView.swift */,
+				A200000B2B00000100000001 /* NotificationDetailSheet.swift */,
+				A200000C2B00000100000001 /* AddNotificationSheet.swift */,
+				A200000D2B00000100000001 /* SetupGuideAndSettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000012B00000100000001 /* NotificationSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A60000022B00000100000001 /* Build configuration list for PBXNativeTarget "NotificationSaver" */;
+			buildPhases = (
+				A50000022B00000100000001 /* Sources */,
+				A30000012B00000100000001 /* Frameworks */,
+				A50000032B00000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationSaver;
+			productName = NotificationSaver;
+			productReference = A20000002B00000100000001 /* NotificationSaver.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A60000002B00000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A50000012B00000100000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A60000012B00000100000001 /* Build configuration list for PBXProject "NotificationSaver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = tr;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				tr,
+				en,
+				Base,
+			);
+			mainGroup = A40000012B00000100000001;
+			productRefGroup = A40000032B00000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A50000012B00000100000001 /* NotificationSaver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A50000032B00000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000E2B00000100000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A50000022B00000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000012B00000100000001 /* NotificationSaverApp.swift in Sources */,
+				A10000022B00000100000001 /* SavedNotification.swift in Sources */,
+				A10000032B00000100000001 /* NotificationStore.swift in Sources */,
+				A10000042B00000100000001 /* SaveNotificationIntent.swift in Sources */,
+				A10000052B00000100000001 /* DateFormatting.swift in Sources */,
+				A10000062B00000100000001 /* ContentView.swift in Sources */,
+				A10000072B00000100000001 /* NotificationFeedView.swift in Sources */,
+				A10000082B00000100000001 /* FavoritesView.swift in Sources */,
+				A10000092B00000100000001 /* CalendarArchiveView.swift in Sources */,
+				A100000A2B00000100000001 /* NotificationRowView.swift in Sources */,
+				A100000B2B00000100000001 /* NotificationDetailSheet.swift in Sources */,
+				A100000C2B00000100000001 /* AddNotificationSheet.swift in Sources */,
+				A100000D2B00000100000001 /* SetupGuideAndSettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A70000012B00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A70000022B00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A70000032B00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NotificationSaver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tr.com.salihteknik.notificationsaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A70000042B00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = NotificationSaver/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tr.com.salihteknik.notificationsaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A60000012B00000100000001 /* Build configuration list for PBXProject "NotificationSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70000012B00000100000001 /* Debug */,
+				A70000022B00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A60000022B00000100000001 /* Build configuration list for PBXNativeTarget "NotificationSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70000032B00000100000001 /* Debug */,
+				A70000042B00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A60000002B00000100000001 /* Project object */;
+}
+
