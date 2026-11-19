@@ -66,7 +66,7 @@ final class NotificationStore: ObservableObject {
             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
             encoder.dateEncodingStrategy = .iso8601
             let data = try encoder.encode(notifications)
-            try data.write(to: url, options: [.atomic])
+            try data.write(to: url, options: [.atomic, .completeFileProtection])
         } catch {
             print("Bildirimler kaydedilirken hata oluştu: \(error)")
         }
@@ -109,7 +109,7 @@ final class NotificationStore: ObservableObject {
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         encoder.dateEncodingStrategy = .iso8601
         if let encoded = try? encoder.encode(currentList) {
-            try? encoded.write(to: url, options: [.atomic])
+            try? encoded.write(to: url, options: [.atomic, .completeFileProtection])
         }
 
         Task { @MainActor in

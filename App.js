@@ -74,12 +74,25 @@ export default function App() {
 
   // Toast Notification
   const [toastMsg, setToastMsg] = useState(null);
+  const toastTimerRef = React.useRef(null);
+  const processedInitialUrlRef = React.useRef(false);
+  const autoFavRef = React.useRef(autoFavoriteBills);
+  useEffect(() => {
+    autoFavRef.current = autoFavoriteBills;
+  }, [autoFavoriteBills]);
 
   const showToast = useCallback((msg) => {
     setToastMsg(msg);
-    setTimeout(() => {
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => {
       setToastMsg((prev) => (prev === msg ? null : prev));
     }, 2800);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    };
   }, []);
 
   // 1. Load from AsyncStorage on mount
@@ -92,12 +105,17 @@ export default function App() {
         ]);
 
         if (rawAutoFav !== null) {
-          setAutoFavoriteBills(JSON.parse(rawAutoFav));
+          setAutoFavoriteBills(Boolean(JSON.parse(rawAutoFav)));
         }
 
         if (rawItems !== null) {
           const parsed = JSON.parse(rawItems);
-          setNotifications(parsed);
+          if (Array.isArray(parsed)) {
+            setNotifications(parsed);
+          } else {
+            const initial = createInitialSampleData();
+            setNotifications(initial);
+          }
         } else {
           const initial = createInitialSampleData();
           setNotifications(initial);
@@ -132,37 +150,40 @@ export default function App() {
   // 2. Deep Link Listener for iOS Shortcuts (notificationsaver://save?sender=...&body=...&fav=1)
   const handleIncomingUrl = useCallback(
     (urlStr) => {
-      if (!urlStr) return;
+      if (!urlStr || typeof urlStr !== 'string') return;
       try {
-        const qIndex = urlStr.indexOf('?');
+        const cleanUrl = urlStr.split('#')[0];
+        const qIndex = cleanUrl.indexOf('?');
         if (qIndex === -1) return;
-        const queryString = urlStr.slice(qIndex + 1);
+        const queryString = cleanUrl.slice(qIndex + 1);
         const params = {};
         queryString.split('&').forEach((pair) => {
-          const [k, v] = pair.split('=');
+          const eqIdx = pair.indexOf('=');
+          const k = eqIdx === -1 ? pair : pair.slice(0, eqIdx);
+          const v = eqIdx === -1 ? '' : pair.slice(eqIdx + 1);
           if (k) {
             params[decodeURIComponent(k)] = decodeURIComponent(
-              (v || '').replace(/\+/g, ' ')
+              v.replace(/\+/g, ' ')
             );
           }
         });
 
         if (params.body || params.text || params.message) {
-          const bodyText = params.body || params.text || params.message;
-          const senderText = params.sender || params.title || 'SMS Otomasyonu';
+          const bodyText = String(params.body || params.text || params.message).slice(0, 2000);
+          const senderText = String(params.sender || params.title || 'SMS Otomasyonu').slice(0, 120);
           const forceFav = params.fav === '1' || params.fav === 'true';
 
           const newItem = buildNotificationItem({
             sender: senderText,
             body: bodyText,
             isFavorite: forceFav,
-            autoFavoriteBills,
+            autoFavoriteBills: autoFavRef.current,
             sourceApp: 'iOS Kestirmeler',
           });
 
           setNotifications((prev) => {
             const next = [newItem, ...prev];
-            AsyncStorage.setItem(STORAGE_KEY_ITEMS, JSON.stringify(next));
+            AsyncStorage.setItem(STORAGE_KEY_ITEMS, JSON.stringify(next)).catch(() => {});
             return next;
           });
 
@@ -172,18 +193,24 @@ export default function App() {
         console.warn('URL parse hatası:', e);
       }
     },
-    [autoFavoriteBills, showToast]
+    [showToast]
   );
 
   useEffect(() => {
-    Linking.getInitialURL().then((url) => {
-      if (url) handleIncomingUrl(url);
-    });
+    if (!isLoaded) return;
+    if (!processedInitialUrlRef.current) {
+      processedInitialUrlRef.current = true;
+      Linking.getInitialURL()
+        .then((url) => {
+          if (url) handleIncomingUrl(url);
+        })
+        .catch(() => {});
+    }
     const sub = Linking.addEventListener('url', (event) => {
       if (event?.url) handleIncomingUrl(event.url);
     });
     return () => sub.remove();
-  }, [handleIncomingUrl]);
+  }, [isLoaded, handleIncomingUrl]);
 
   // 3. Core Actions
   const handleToggleFavorite = (item) => {
@@ -1117,7 +1144,11 @@ export default function App() {
 
             <TouchableOpacity
               style={styles.secondaryActionBtn}
-              onPress={() => Linking.openURL('shortcuts://')}
+              onPress={() => {
+                Linking.openURL('shortcuts://').catch(() => {
+                  showToast('Bu cihazda iOS Kestirmeler uygulaması bulunamadı.');
+                });
+              }}
             >
               <Text style={styles.secondaryActionBtnText}>
                 ↗ iOS Kestirmeler Uygulamasını Aç
@@ -1268,7 +1299,9 @@ export default function App() {
                   <TouchableOpacity
                     style={styles.modalCloseBtn}
                     onPress={() => {
-                      saveDetailNote();
+                      if ((detailNoteText || '') !== (selectedDetailItem.note || '')) {
+                        saveDetailNote();
+                      }
                       setDetailItemId(null);
                     }}
                   >

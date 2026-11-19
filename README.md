@@ -40,3 +40,4 @@ npx expo start
 * `src/smartAnalyzer.js` — Türkçe fatura/banka/kargo kategori algılayıcı ve TL/USD/EUR tutar ayrıştırıcı
 * `src/sampleData.js` — Örnek bildirimler ve canlı SMS test simülatörü
 * `swift-native-backup/` — Saf SwiftUI + `AppIntents` (`NotificationSaver.xcodeproj`) yerel Xcode projesi
+
